@@ -87,16 +87,11 @@ export function Menu() {
         return `(async(token)=>{let e=await fetch("https://api.monopolize.ru/menu/script",{headers:{Authorization:"Bearer " +token}}),t=await e.text();var a=document.createElement("script");a.innerHTML=t,document.head.append(a),a.remove();window.localStorage.setItem('token_key', token);})(${JSON.stringify(user.token)});`.trim();
     }
 
-    return <div className="contents-tabs">
+    return <div className="contents-tabs card-grid">
         <Typography.Paragraph>
             {contextHolder}
         </Typography.Paragraph>
-        <Card
-            style={{
-                width: 600,
-                marginBottom: "1rem"
-            }}
-        >
+        <Card style={{marginBottom: "1rem"}}>
             <Select
                 value={mode}
                 placeholder="Выберите режим игры"
@@ -150,11 +145,7 @@ export function Menu() {
             <Button onClick={sendSettings}>Сохранить</Button>
         </Card>
 
-        {isScript && <Card
-            style={{
-                width: 600,
-            }}
-        >
+        {isScript && <Card>
             <SyntaxHighlighter language="javascript" style={dark}>
                 {codeString()}
             </SyntaxHighlighter>

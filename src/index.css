@@ -60,3 +60,13 @@
     justify-content: center;
     flex-direction: column;
 }
+
+.card-grid .ant-card{
+    width: 600px;
+}
+
+@media (max-width: 768px) {
+    .card-grid .ant-card{
+        width: 100%;
+    }
+}
