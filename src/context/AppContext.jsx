@@ -1,4 +1,5 @@
 import {createContext, useContext, useEffect, useState} from "react";
+import {TYPE_USER} from "../types.js";
 
 
 const AppContext = createContext({
@@ -21,7 +22,7 @@ export function AppContextProvider({ children }) {
     useEffect(() => {
         setLoading(true);
         if(!user.token) {
-            const userJson = window.localStorage.getItem("user");
+            const userJson = window.localStorage.getItem(TYPE_USER);
             if(userJson) {
                 addUser( JSON.parse(userJson));
             }

@@ -1,3 +1,4 @@
+import {TYPE_USER} from "../types.js";
 
 
 function builderData(data, obj) {
@@ -31,7 +32,7 @@ export async function http(url = '', method = 'GET', data = null, token = null) 
         const response = await fetch(`https://api.monopolize.ru/${url}`, options);
         const data = await response.json();
         if(data.code === 401) {
-           window.localStorage.removeItem("user");
+           window.localStorage.removeItem(TYPE_USER);
            window.location.reload();
         }
 
