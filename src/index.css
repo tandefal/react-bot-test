@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content header {
+    height: 60px;
+    color: #fff;
+    background-color: #4096ff;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content main {
+    min-height: calc(100vh - 60px);
+    background-color: #001529;
+    color: #fff;
+    padding: 1rem;
+}
+.ant-form-item-label label {
+    color: #fff !important;
+}
+
+.form-auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+}
+
+.permissions-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px);
+}
+
+.ant-tabs .ant-tabs-tab,  .ant-tabs{
+    color: #fff;
+}
+
+.confirm-form label, .confirm-form-permissions label{
+    color: #000 !important;
+}
+.confirm-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+}
+
+.contents-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
