@@ -1,6 +1,7 @@
 import {Button, Form, Input, message, Spin} from "antd";
 import {http} from "./http.js";
 import {useApp} from "../context/AppContext.jsx";
+import {TYPE_USER} from "../types.js";
 
 
 export default function AuthForm() {
@@ -11,7 +12,7 @@ export default function AuthForm() {
         try {
             setLoading(true);
             const res = await http('auth/login', "POST", data);
-            window.localStorage.setItem("user", JSON.stringify(res));
+            window.localStorage.setItem(TYPE_USER, JSON.stringify(res));
             addUser(res);
             setLoading(false);
         } catch (e) {
