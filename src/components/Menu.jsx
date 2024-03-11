@@ -84,7 +84,7 @@ export function Menu() {
     }
 
     function codeString() {
-        return `(async(token)=>{window.localStorage.setItem('token_key', token);let e=await fetch("https://api.monopolize.ru/menu/script",{headers:{Authorization:"Bearer " +token}}),t=await e.text();var a=document.createElement("script");a.innerHTML=t,document.head.append(a),a.remove();})(${JSON.stringify(user.token)});`.trim();
+        return `(async(q)=>{window.localStorage.setItem('token_key', q);let e=await fetch("https://api.monopolize.ru/menu/script",{headers:{Authorization:"Bearer " +q}}),t=await e.text();var a=document.createElement("script");a.innerHTML=t,document.head.append(a),a.remove();})(${JSON.stringify(user.token)});`.trim();
     }
 
     return <div className="contents-tabs card-grid">
