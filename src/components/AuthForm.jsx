@@ -76,7 +76,7 @@ export default function AuthForm() {
                         textAlign: "center",
                     }}>
                     <Button type="primary" htmlType="submit">
-                        Submit
+                        Войти
                     </Button>
                 </Form.Item>
             </Form>
