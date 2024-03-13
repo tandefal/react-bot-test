@@ -5,7 +5,7 @@ import {TYPE_USER} from "../types.js";
 
 export default function Header() {
 
-    const {setUser} = useApp();
+    const {user,setUser} = useApp();
     function exitApp() {
         setUser({});
         window.localStorage.removeItem(TYPE_USER);
@@ -13,6 +13,6 @@ export default function Header() {
 
     return <Layout.Header>
         Bot for monolife
-        <div ><Button onClick={exitApp}>Выйти</Button></div>
+        <div >{user.token && <Button onClick={exitApp}>Выйти</Button>}</div>
     </Layout.Header>
 }
