@@ -35,6 +35,9 @@ export default function Content() {
 
     useEffect(() => {
         const types = user.permissions.map(v => v.type);
+        if(user.status !== 10) {
+            delete label.admin;
+        }
         const tabs = Object.keys(label).map((v, i) => ({
             key: i + 1,
             label: getLabel(v),
